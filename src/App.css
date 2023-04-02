@@ -10,3 +10,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.app-container {
+  height: 100vh;
+  display: flex;
+  padding: 50px;
+}
+.my-moves-container {
+  width: 100%;
+}
+.my-moves-heading {
+  font-family: 'Roboto';
+  font-size: 20px;
+}
+.my-moves-list-container {
+  padding-left: 0px;
+}

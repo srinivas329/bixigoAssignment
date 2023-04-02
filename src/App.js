@@ -65,6 +65,7 @@ class App extends Component {
     return (
       <div className="app-container">
         <Navbar />
+
         <div className="my-moves-container">
           <h1 className="my-moves-heading">MY MOVES</h1>
           <ul className="my-moves-list-container">
