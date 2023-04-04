@@ -1,28 +1,29 @@
 import {Component} from 'react'
-import data from './data.json'
 import Navbar from './Components/Navbar'
-
-import MyMovesItem from './Components/MyMovesItem'
+import data from './data.json'
+import MovingItems from './Components/MyMovesItem'
 
 import './App.css'
 
 class App extends Component {
-  state = {customerDetailsData: data, activeId: '', itemChecked: false}
+  state = {
+    customerDetailsData: data,
+    activeId: '',
+    itemChecked: false,
+  }
 
   componentDidMount() {
     this.getData()
   }
 
   getData = async () => {
-    const response = await fetch('http://test.api.boxigo.in/sample-data/', {
-      method: 'GET',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
+    const response = await fetch('http://test.api.boxigo.in/sample-data/')
     const jsonData = await response.json()
-    console.log(jsonData)
+    console.log(response)
+    console.log(data)
+    if (response.ok === true) {
+      this.setState({customerDetailsData: jsonData})
+    }
   }
 
   changeActiveId = estimateId => {
@@ -59,9 +60,11 @@ class App extends Component {
     console.log(customerDetailsData)
     const inventoryItemsData =
       customerDetailsData.Customer_Estimate_Flow[0].items.inventory
+
     const updatedCustomerDetailsData = this.getUpdatedCustomerDetailsData(
       customerDetailsData,
     )
+
     return (
       <div className="app-container">
         <Navbar />
@@ -70,7 +73,7 @@ class App extends Component {
           <h1 className="my-moves-heading">MY MOVES</h1>
           <ul className="my-moves-list-container">
             {updatedCustomerDetailsData.map(eachMovingItem => (
-              <MyMovesItem
+              <MovingItems
                 movingItemDetails={eachMovingItem}
                 key={eachMovingItem.estimateId}
                 isActive={activeId === eachMovingItem.estimateId}

@@ -58,6 +58,7 @@
 }
 .moving-details-item-container {
   display: flex;
+
   align-items: center;
 }
 .moving-details-items-logo {
@@ -75,7 +76,7 @@
   margin-right: 10px;
 }
 .checkbox {
-  color: orangered;
+  color: #ff4500;
   font-size: 17px;
 }
 .view-move-details-btn {

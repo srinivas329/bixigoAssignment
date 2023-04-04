@@ -1,15 +1,17 @@
 import {Component} from 'react'
-import {HiOutlineArrowNarrowRight} from 'react-icons/hi'
+
 import {AiFillHome} from 'react-icons/ai'
 import {FaBoxes} from 'react-icons/fa'
-import {GiPathDistance} from 'react-icons/gi'
-import {BsPen, BsFillExclamationTriangleFill} from 'react-icons/bs'
 import {IoCheckbox} from 'react-icons/io5'
-import InventoryDetailsItem from '../InventoryItem'
+import {GiPathDistance} from 'react-icons/gi'
+import {HiOutlineArrowNarrowRight} from 'react-icons/hi'
+import {BsPen, BsFillExclamationTriangleFill} from 'react-icons/bs'
+
+import InventoryItems from '../InventoryItem'
 
 import './index.css'
 
-class MyMovesItem extends Component {
+class MovingItems extends Component {
   state = {inventoryItemId: '', isChecked: false}
 
   checkingInventoryItem = id => {
@@ -192,7 +194,7 @@ class MyMovesItem extends Component {
           </div>
           <ul className="inventory-item-details-list-container">
             {inventoryItemsData.map(each => (
-              <InventoryDetailsItem
+              <InventoryItems
                 inventoryItemDetails={each}
                 key={each.id}
                 checkingInventoryItem={this.checkingInventoryItem}
@@ -223,4 +225,4 @@ class MyMovesItem extends Component {
   }
 }
 
-export default MyMovesItem
+export default MovingItems

@@ -1,10 +1,13 @@
 import './index.css'
 
-const InventoryDetailedDescription = prop => {
+const InventoryDetails = prop => {
   const {itemDetails} = prop
   const {displayName, items} = itemDetails
+  console.log(items)
+
   const getSelectedType = type => {
     const randomNumber = Math.ceil(Math.random() * type.length)
+    console.log(randomNumber)
     return type.length > 0 ? (
       <p className="option">{type[randomNumber - 1].option}</p>
     ) : (
@@ -27,4 +30,4 @@ const InventoryDetailedDescription = prop => {
   )
 }
 
-export default InventoryDetailedDescription
+export default InventoryDetails

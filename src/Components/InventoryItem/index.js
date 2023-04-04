@@ -1,17 +1,16 @@
-import {IoIosArrowDown, IoIosArrowUp} from 'react-icons/io'
+import {MdKeyboardArrowDown, MdKeyboardArrowUp} from 'react-icons/md'
 
-import InventoryDetailedDescription from '../InventoryItemDetailedDescription'
+import InventoryDetails from '../InventoryDetails'
 
 import './index.css'
 
-const InventoryItem = prop => {
+const InventoryItems = prop => {
   const {
     inventoryItemDetails,
     checkingInventoryItem,
     isInventoryItemChecked,
     isChecked,
   } = prop
-  console.log(isChecked)
   const {id, displayName, category} = inventoryItemDetails
   const inventoryDetailsItemCountArray = category.map(each => each.items.length)
   const itemsCount = inventoryDetailsItemCountArray.reduce((a, b) => a + b)
@@ -21,7 +20,7 @@ const InventoryItem = prop => {
   const toDisplayFurnitureItems = (
     <ul className="Inventory-detailed-description-list-container">
       {category.map(each => (
-        <InventoryDetailedDescription itemDetails={each} key={each.id} />
+        <InventoryDetails itemDetails={each} key={each.id} />
       ))}
     </ul>
   )
@@ -41,9 +40,9 @@ const InventoryItem = prop => {
           onClick={onClickingDropDownIcon}
         >
           {isInventoryItemChecked && isChecked ? (
-            <IoIosArrowUp />
+            <MdKeyboardArrowUp size={25} />
           ) : (
-            <IoIosArrowDown />
+            <MdKeyboardArrowDown size={25} />
           )}
         </button>
       </div>
@@ -52,4 +51,4 @@ const InventoryItem = prop => {
   )
 }
 
-export default InventoryItem
+export default InventoryItems
