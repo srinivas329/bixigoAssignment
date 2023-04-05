@@ -1,7 +1,7 @@
 .my-moves-list-item {
   list-style-type: none;
 }
-.from-to-address-container {
+.address-tab {
   display: flex;
   justify-content: space-between;
 }
@@ -35,7 +35,7 @@
   color: orangered;
   font-weight: bold;
 }
-.from-address-container {
+.from-address-tab {
   width: 32%;
 }
 .next-arrow-container {

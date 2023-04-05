@@ -9,7 +9,7 @@ import {BsPen, BsFillExclamationTriangleFill} from 'react-icons/bs'
 
 import InventoryItems from '../InventoryItem'
 
-import './index.css'
+import './MoveItems.css'
 
 class MovingItems extends Component {
   state = {inventoryItemId: '', isChecked: false}
@@ -51,8 +51,8 @@ class MovingItems extends Component {
     const onClickingViewMoveBtn = () => changeActiveId(estimateId)
 
     const getFromToAddressContainer = (
-      <div className="from-to-address-container">
-        <div className="from-address-container">
+      <div className="address-tab">
+        <div className="from-address-tab">
           <h1 className="from-to-address-heading">From</h1>
           <p className="from-to-address-description">{movingFrom}</p>
         </div>

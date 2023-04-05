@@ -1,7 +1,7 @@
-.inventory-item-details-list-item {
+.inventory-list-item {
   list-style-type: none;
 }
-.inventory-item-container {
+.inventory-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,12 +11,12 @@
   padding-left: 20px;
   padding-right: 20px;
 }
-.inventory-item-heading {
+.item-heading {
   font-family: 'Roboto';
   color: orangered;
   font-size: 17px;
 }
-.itemsCountContainer {
+.count-tab {
   background-color: orangered;
   border-radius: 60px;
   margin-left: 10px;
@@ -31,15 +31,15 @@
   padding-right: 10px;
   margin: 0px;
 }
-.inventory-item-name-container {
+.item-name-tab {
   display: flex;
   align-items: center;
 }
-.arrow-button {
+.arrow-btn {
   background-color: transparent;
   border-width: 0px;
 }
-.Inventory-detailed-description-list-container {
+.Inventory-ul-list {
   padding-left: 0px;
   display: flex;
   flex-wrap: wrap;

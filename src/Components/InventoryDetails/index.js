@@ -1,4 +1,4 @@
-import './index.css'
+import './inventoryDetails.css'
 
 const InventoryDetails = prop => {
   const {itemDetails} = prop
@@ -15,12 +15,12 @@ const InventoryDetails = prop => {
     )
   }
   return (
-    <li className="Inventory-detailed-description-list-item">
-      <h1 className="furniture">{displayName}</h1>
+    <li className="Inventory-details-list-item">
+      <h1 className="heading">{displayName}</h1>
       {items.map(each => (
-        <div className="quantity-container">
+        <div className="quantity-tab">
           <div>
-            <p className="furniture-name">{each.displayName}</p>
+            <p className="item-name">{each.displayName}</p>
             {each.meta.hasType ? getSelectedType(each.type) : ''}
           </div>
           <p className="quantity">{each.qty}</p>

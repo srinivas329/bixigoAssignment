@@ -2,7 +2,7 @@ import {MdKeyboardArrowDown, MdKeyboardArrowUp} from 'react-icons/md'
 
 import InventoryDetails from '../InventoryDetails'
 
-import './index.css'
+import './InventoryItem.css'
 
 const InventoryItems = prop => {
   const {
@@ -18,7 +18,7 @@ const InventoryItems = prop => {
   const onClickingDropDownIcon = () => checkingInventoryItem(id)
 
   const toDisplayFurnitureItems = (
-    <ul className="Inventory-detailed-description-list-container">
+    <ul className="Inventory-ul-list">
       {category.map(each => (
         <InventoryDetails itemDetails={each} key={each.id} />
       ))}
@@ -26,17 +26,17 @@ const InventoryItems = prop => {
   )
 
   return (
-    <li className="inventory-item-details-list-item">
-      <div className="inventory-item-container">
-        <div className="inventory-item-name-container">
-          <h1 className="inventory-item-heading">{displayName}</h1>
-          <div className="itemsCountContainer">
+    <li className="inventory-list-item">
+      <div className="inventory-container">
+        <div className="item-name-tab">
+          <h1 className="item-heading">{displayName}</h1>
+          <div className="count-tab">
             <p className="items-count">{itemsCount}</p>
           </div>
         </div>
         <button
           type="button"
-          className="arrow-button"
+          className="arrow-btn"
           onClick={onClickingDropDownIcon}
         >
           {isInventoryItemChecked && isChecked ? (
